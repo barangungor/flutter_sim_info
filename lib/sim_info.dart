@@ -8,7 +8,7 @@ class SimInfo {
       const MethodChannel('flutter.moum.sim_info');
 
   static Future<String> get getAllowsVOIP async {
-    bool? value =  await _channel.invokeMethod('allowsVOIP');
+    bool? value = await _channel.invokeMethod('allowsVOIP');
     return value.toString();
   }
 
@@ -28,4 +28,7 @@ class SimInfo {
     return await _channel.invokeMethod('mobileNetworkCode');
   }
 
+  static Future get getSIMState async {
+    return await _channel.invokeMethod('isSimStateReady');
+  }
 }

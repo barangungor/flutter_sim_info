@@ -30,6 +30,9 @@ class MethodHandlerImpl implements MethodChannel.MethodCallHandler {
             case "allowsVOIP":
                 result.success(true);
                 break;
+            case "isSimStateReady":
+                result.success(isSimStateReady());
+                break;
             case "carrierName":
                 result.success(getCarrierName());
                 break;
